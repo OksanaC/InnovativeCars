@@ -1,0 +1,45 @@
+<template>
+    <lightning-card title="ALL ACCOUNTS" icon-name="standard:account">
+    
+    <table>
+    <tr>
+    <td>
+    
+    <div class="slds-m-around_medium">
+    <select class="slds-select" onchange={showroomFetch}>
+    <option>Select Account</option>
+    <template for:each ={acc} for:item="item">
+    <option key={item.Id} value={item.Id}>{item.Name}</option>
+    </template>
+    </select>
+    </div>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <div class="slds-m-around_medium">
+    <select class="slds-select" onchange={fetchVehicle}>
+    <option >Select Showroom</option>
+    <template for:each ={show} for:item="item">
+    <option key={item.Id} value={item.Name}>{item.Name}</option>
+    </template>
+    </select>
+    </div>
+    </td>
+    </tr>
+    
+    <tr>
+    <td>
+    <div class="slds-m-around_medium">
+    <select class="slds-select" >
+    <option >Select Vehicle</option>
+    <template for:each ={veh} for:item="item">
+    <option key={item.Id} value={item.Name}>{item.Name}</option>
+    </template>
+    </select>
+    </div>
+    </td>
+    </tr>
+    </table>
+    </lightning-card>
+    </template>
