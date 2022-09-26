@@ -11,11 +11,11 @@
             </lightning-layout>
             <lightning-layout>
                 <lightning-layout-item>
-                    <p class="slds-text-body--small"> • Vehicle Inspection</p>
+                    <p class="slds-text-body--small">  • Vehicle Inspection</p>
                 </lightning-layout-item>
             </lightning-layout>
         </div>
-        <lightning-card title="ALL ACCOUNTS"></lightning-card>
+        <lightning-card title="Accounts"></lightning-card>
         <label class="slds-form-element__label" for="select-01">
         </label>
         <div class="slds-form-element__control">
@@ -46,13 +46,15 @@
                 </div>
             </div>
         </lightning-card>
+  
         <template if:true={vehicles}>
             <lightning-card title="Vehicles">
                 <div style="height: 300px;">
-                    <c-vehicle-list vehicle={vehicle} onvehicleview={handleVehicleView}></c-vehicle-list>
                     <lightning-datatable onrowselection={onVehicleSelection} key-field="Id" data={vehicles.data}
-                    columns={columns}>>
+                    columns={columns}  >
+                 
                     </lightning-datatable>
+                    
                 </div>
             </lightning-card>
         </template>
