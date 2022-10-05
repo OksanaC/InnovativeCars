@@ -1,0 +1,62 @@
+<template>
+    <lightning-card>
+        <div class="slds-page-header slds-page-header--object-home">
+            <lightning-layout>
+                <lightning-layout-item>
+                    <lightning-icon icon-name="standard:work_order" alternative-text="Account"></lightning-icon>
+                </lightning-layout-item>
+                <lightning-layout-item class="slds-m-left--small">
+                    <h1 class="slds-page-header__title slds-p-right--x-small">INNOVATIVE CARS</h1>
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item>
+                    <p class="slds-text-body--small">  • Vehicle Inspection</p>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+        <lightning-card title="Accounts"></lightning-card>
+        <label class="slds-form-element__label" for="select-01">
+        </label>
+        <div class="slds-form-element__control">
+            <div class="slds-select_container">
+                <select class="slds-select" id="select-01" onchange={onValueSelection}>
+                    <option value=" ">Select Account</option>
+                    <!--iterate all picklist values from accounts list using for:each loop-->
+                    <template for:each={accounts.data} for:item="acc">
+                        <option key={acc.Id} value={acc.Id}>
+                            {acc.Name}
+                        </option>
+                    </template>
+                </select>
+            </div>
+        </div>
+        <lightning-card title="Showrooms">
+            <label class="slds-form-element__label" for="select-02">Select Showrooms</label>
+            <div class="slds-form-element__control">
+                <div class="slds-select_container">
+                    <select class="slds-select" id="select-02" onchange={onValueSelection2}>
+                        <option value=" ">Select Showrooms </option>
+                        <template for:each={showrooms.data} for:item="show">
+                            <option key={show.Id} value={show.Id}>
+                                {show.Name}
+                            </option>
+                        </template>
+                    </select>
+                </div>
+            </div>
+        </lightning-card>
+  
+        <template if:true={vehicles}>
+            <lightning-card title="Vehicles">
+                <div style="height: 300px;">
+                    <lightning-datatable onrowselection={onVehicleSelection} key-field="Id" data={vehicles.data}
+                    columns={columns}  >
+                 
+                    </lightning-datatable>
+                    
+                </div>
+            </lightning-card>
+        </template>
+    </lightning-card>
+</template>
