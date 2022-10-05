@@ -3,9 +3,6 @@ import {
     wire,
     track
 } from 'lwc';
-import {
-    getRelatedListRecordsBatch
-} from 'lightning/uiRelatedListApi';
 
 
 import getAccountList from '@salesforce/apex/VehicleListController.getAccount';
